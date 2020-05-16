@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@color/lighPrimaryColor"
+        android:background="@color/colorWhite"
         >
         <LinearLayout
             android:layout_width="match_parent"
@@ -18,8 +21,8 @@
             >
             <com.mikhaellopez.circularimageview.CircularImageView
                 android:id="@+id/ivAccount"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="@dimen/imagedim"
+                android:layout_height="@dimen/imagedim"
                 android:layout_weight="0"
                 android:layout_gravity="center_vertical"
                 android:src="@drawable/account"
@@ -37,14 +40,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/mainName"
                     android:textColor="@color/black"
                     android:text="Akhilesh Thakur"
                     />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/settingtext"
                     android:textColor="@color/black"
                     android:text="thakurakhilesh20@gmail.com"
                     />
@@ -54,27 +57,34 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
+            android:layout_marginTop="@dimen/mainPadding"
             >
             <TextView
                 style="@style/settingTextView"
                 android:id="@+id/changepassword"
-                android:text="Change Password"
+                android:text="@string/change_password"
+                android:drawableLeft="@drawable/changepass"
                 />
+
             <TextView
                 android:id="@+id/share"
                 style="@style/settingTextView"
-                android:text="Share With Friends"
-                />
+                android:drawableLeft="@drawable/share"
+                android:text="@string/share_with_friends" />
+
             <TextView
                 android:id="@+id/contactus"
                 style="@style/settingTextView"
-                android:text="Contact Us"
+                android:text="@string/contact_us"
+                android:drawableLeft="@drawable/contactus"
                 />
             <TextView
                 android:id="@+id/logout"
                 style="@style/settingTextView"
-                android:text="LogOut"
+                android:text="@string/logout"
+                android:drawableLeft="@drawable/logout"
                 />
         </LinearLayout>
     </LinearLayout>
+    </ScrollView>
 </layout>

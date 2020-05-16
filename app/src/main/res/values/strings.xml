@@ -32,4 +32,7 @@
     <string name="news_updates">News Feeds</string>
     <string name="news_paper">News Paper</string>
     <string name="logout">LogOut</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="share_with_friends">Share With Friends</string>
+    <string name="change_password">Change Password</string>
 </resources>

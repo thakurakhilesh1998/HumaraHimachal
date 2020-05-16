@@ -7,4 +7,7 @@
     <dimen name="errorPadding">6dp</dimen>
     <dimen name="marginMainTop">60dp</dimen>
     <dimen name="ele">4dp</dimen>
+    <dimen name="settingtext">16sp</dimen>
+    <dimen name="mainName">20sp</dimen>
+    <dimen name="imagedim">60dp</dimen>
 </resources>
