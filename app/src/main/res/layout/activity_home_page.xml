@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".UI.HomePage">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabMaxWidth="0dp"
+        app:tabBackground="@color/colorPrimary"
+        app:tabTextColor="@color/colorWhite"
+        app:tabRippleColor="@color/colorAccent"
+        app:tabIndicatorColor="@color/colorWhite"
+        app:tabGravity="fill"
+        app:tabIndicatorHeight="3dp"
+        app:tabMode="fixed"
+        android:layout_alignParentBottom="true"
+        >
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/home"
+            android:icon="@drawable/ic_home_black_24dp"
+            />
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/setting"
+            android:icon="@drawable/ic_settings_black_24dp"
+            />
+    </com.google.android.material.tabs.TabLayout>
+</RelativeLayout>
+</layout>

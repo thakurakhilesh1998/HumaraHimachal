@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/mainPadding"
+    android:id="@+id/parentview"
+    tools:context=".UI.LoginActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/marginTop"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/mainText"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textAppearance="@android:style/TextAppearance.Large"
+            android:text="@string/welcome" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/subHeading"
+        android:text="@string/signin"
+        />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/marginMainTop"
+        >
+
+        <EditText
+            style="@style/editText"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:id="@+id/tvEmail"
+            android:padding="@dimen/mainPadding"
+            android:background="@drawable/input_text_border"
+            />
+        <TextView
+            android:id="@+id/tvEmailError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/emailError"
+            android:padding="@dimen/errorPadding"
+            android:visibility="gone"
+            android:textColor="@color/red" />
+
+        <EditText
+            android:id="@+id/tvPassword"
+            style="@style/editText"
+            android:inputType="textPassword"
+            android:hint="@string/password"
+            android:layout_marginTop="@dimen/mainPadding"
+            android:padding="@dimen/mainPadding"
+            android:background="@drawable/input_text_border"
+            />
+        <TextView
+            android:id="@+id/tvPassError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/passwordError"
+            android:padding="@dimen/errorPadding"
+            android:visibility="gone"
+            android:textColor="@color/red" />
+    <TextView
+        android:id="@+id/tvResetPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/forgot"
+        android:layout_gravity="end"
+        android:layout_marginTop="@dimen/marginTopforgot"
+        />
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/signIn"
+        android:background="@drawable/button"
+        android:textColor="@color/colorWhite"
+        android:layout_marginTop="@dimen/marginTop"
+        />
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/googleSignIN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/marginTop"
+            />
+    </LinearLayout>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_marginTop="@dimen/marginTop"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom|center_horizontal"
+    android:orientation="horizontal"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:text="@string/newUser" />
+    <TextView
+        android:id="@+id/signUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="@dimen/smallMargin"
+        android:text="@string/signUp"
+        android:textStyle="bold"
+        android:textColor="@color/colorAccent"
+        />
+</LinearLayout>
+</LinearLayout>
+    </ScrollView>
+</layout>

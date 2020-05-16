@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="mainPadding">16dp</dimen>
+    <dimen name="marginTop">24dp</dimen>
+    <dimen name="marginTopforgot">12dp</dimen>
+    <dimen name="mainText">32sp</dimen>
+    <dimen name="subHeading">24sp</dimen>
+    <dimen name="subMargin">8dp</dimen>
+
+</resources>

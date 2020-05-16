@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Humara Himachal</string>
+
+    <string name="welcome">Welcome,</string>
+    <string name="signin">Sign in to Continue,</string>
+    <string name="login">Login</string>
+    <string name="forgot">Forgot Password?</string>
+    <string name="createaccount">Create Account</string>
+    <string name="signup">Sign Up to get Started!</string>
+    <string name="newUser">I\'m a new user.</string>
+    <string name="alreadyuser">I\'m already a member.</string>
+    <string name="signIn">Log In</string>
+    <string name="signUp">Sign Up</string>
+    <string name="email">Email ID</string>
+    <string name="password">Password</string>
+    <string name="fullName">Full Name</string>
+    <string name="register">Register</string>
+    <string name="emailError">Enter valid email address</string>
+    <string name="nameError">Enter valid name</string>
+    <string name="passwordError">Enter valid password</string>
+    <string name="googleSignINClientId">183049360493-nr565qdq1pt6khong2vlt2n5ekg1gv38</string>
+    <string name="progrss">Wait...Registering</string>
+    <string name="registered">user registered successfully</string>
+    <string name="loginwait">Wait.. Log In</string>
+    <string name="emailnotregistered">Email is not registered please provide registered email</string>
+    <string name="resetpass">Reset Password</string>
+    <string name="emailsent">Reset Email sent to your Email</string>
+    <string name="home">Home</string>
+    <string name="setting">Settings</string>
+    <string name="about">About Himachal</string>
+    <string name="districts">Districts</string>
+    <string name="news_updates">News Feeds</string>
+    <string name="news_paper">News Paper</string>
+    <string name="logout">LogOut</string>
+</resources>

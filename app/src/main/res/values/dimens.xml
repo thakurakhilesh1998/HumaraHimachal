@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="cornerradius">12dp</dimen>
+    <dimen name="strokeborder">2dp</dimen>
+    <dimen name="smallMargin">4dp</dimen>
+    <dimen name="strokeError">2dp</dimen>
+    <dimen name="errorPadding">6dp</dimen>
+    <dimen name="marginMainTop">60dp</dimen>
+    <dimen name="ele">4dp</dimen>
+</resources>

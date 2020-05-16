@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+    android:id="@+id/registerParent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/mainPadding"
+   >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/marginTop"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/mainText"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textAppearance="@android:style/TextAppearance.Large"
+            android:text="@string/createaccount" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/subHeading"
+            android:text="@string/signup"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/marginMainTop"
+        >
+            <EditText
+                android:id="@+id/tvName"
+                style="@style/editText"
+                android:hint="@string/fullName"
+                android:inputType="text"
+                android:maxLines="1"
+                android:padding="@dimen/mainPadding"
+                android:background="@drawable/input_text_border"
+                />
+
+        <TextView
+            android:id="@+id/tvNameError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/nameError"
+            android:padding="@dimen/errorPadding"
+            android:visibility="gone"
+            android:textColor="@color/red" />
+
+        <EditText
+                style="@style/editText"
+                android:hint="@string/email"
+                android:id="@+id/tvEmail"
+                android:inputType="textEmailAddress"
+                android:layout_marginTop="@dimen/mainPadding"
+                android:padding="@dimen/mainPadding"
+                android:background="@drawable/input_text_border"
+                />
+
+        <TextView
+            android:id="@+id/tvEmailError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/emailError"
+            android:padding="@dimen/errorPadding"
+            android:visibility="gone"
+            android:textColor="@color/red" />
+
+            <EditText
+                android:id="@+id/tvPassword"
+                style="@style/editText"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:layout_marginTop="@dimen/mainPadding"
+                android:padding="@dimen/mainPadding"
+                android:maxLines="1"
+                android:background="@drawable/input_text_border"
+                />
+
+        <TextView
+            android:id="@+id/tvPasswordError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/passwordError"
+            android:padding="@dimen/errorPadding"
+            android:visibility="gone"
+            android:textColor="@color/red" />
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/register"
+            android:layout_marginTop="@dimen/marginTop"
+            android:background="@drawable/button"
+            android:textColor="@color/colorWhite"/>
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/googleSignUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/marginTop"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/marginTop"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:text="@string/newUser" />
+
+        <TextView
+            android:id="@+id/signUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:text="@string/signIn"
+            android:layout_marginLeft="@dimen/smallMargin"
+            android:textStyle="bold"
+            android:textColor="@color/colorAccent" />
+    </LinearLayout>
+</LinearLayout>
+    </ScrollView>
+</layout>
+

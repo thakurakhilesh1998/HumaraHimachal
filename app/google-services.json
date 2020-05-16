@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "183049360493",
+    "firebase_url": "https://humarahimachal-dfedf.firebaseio.com",
+    "project_id": "humarahimachal-dfedf",
+    "storage_bucket": "humarahimachal-dfedf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:183049360493:android:41d40acda905bd461f1b64",
+        "android_client_info": {
+          "package_name": "humarahimachal.online"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "183049360493-5ceucnbm5hiemm3sd4aa7ibt13aed4fk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "humarahimachal.online",
+            "certificate_hash": "1111aa12c743126cfb274462087c7a2e4d463c30"
+          }
+        },
+        {
+          "client_id": "183049360493-3m38bt7gnp3lob4cclebn9c1mglemqon.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnHRfenqZrJyj9fbKTZF-mQYnKRl1RXQ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "183049360493-nr565qdq1pt6khong2vlt2n5ekg1gv38.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
