@@ -9,7 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UI.HomePage"></activity>
+        <activity android:name=".UI.Himachal_At_Glance_Activity"
+            android:parentActivityName=".UI.About_Himachal_Activity"
+            ></activity>
+        <activity
+            android:name=".UI.Himachal_History_Activity"
+            android:parentActivityName=".UI.About_Himachal_Activity" />
+        <activity android:name=".UI.DistrictActivity" />
+        <activity
+            android:name=".UI.About_Himachal_Activity"
+            android:parentActivityName=".UI.HomePage" />
+        <activity android:name=".UI.HomePage" />
         <activity android:name=".UI.RegisterActivity" />
         <activity android:name=".UI.LoginActivity" />
         <activity
@@ -22,6 +32,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".UI.MainActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

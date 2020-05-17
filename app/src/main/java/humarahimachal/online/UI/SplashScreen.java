@@ -23,7 +23,7 @@ public class SplashScreen extends AppCompatActivity {
             public void run() {
                 if(mUser!=null)
                 {
-                    startActivity(new Intent(getApplicationContext(),HomePage.class));
+                    startActivity(new Intent(getApplicationContext(),About_Himachal_Activity.class));
                     finish();
                 }
                 else

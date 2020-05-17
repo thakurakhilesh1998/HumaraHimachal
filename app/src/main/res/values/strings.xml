@@ -35,4 +35,38 @@
     <string name="contact_us">Contact Us</string>
     <string name="share_with_friends">Share With Friends</string>
     <string name="change_password">Change Password</string>
+    <string name="About">About Himachal</string>
+
+    <string name="history">Himachal History</string>
+    <string name="atglance">Himachal At Glance</string>
+    <string name="geography">Himachal Geography</string>
+    <string name="personality">Himachal Famous Personality</string>
+    <string name="places">Famous Places</string>
+    <string name="sampleData">
+            <body style="text-align:justify">
+        Consulted perpetual of pronounce me delivered. Too months nay end change relied who beauty wishes matter. Shew of john real park so rest we on. Ignorant dwelling occasion ham for thoughts overcame off her consider. Polite it elinor is depend. His not get talked effect worthy barton. Household shameless incommode at no objection behaviour. Especially do at he possession insensible sympathize boisterous it. Songs he on an widen me event truth. Certain law age brother sending amongst why covered. Consulted perpetual of pronounce me delivered. Too months nay end change relied who beauty wishes matter. Shew of john real park so rest we on.
+        Ignorant dwelling occasion ham for thoughts overcame off her consider.
+        Polite it elinor is depend. His not get talked effect worthy barton.
+        Household shameless incommode at no objection behaviour.
+        Especially do at he possession insensible sympathize boisterous it.
+        Songs he on an widen me event truth.
+        Certain law age brother sending amongst why covered.
+            </body>
+    </string>
+    <string name="atglanceinfo"><body style="text-align: center;">The earliest known inhabitants of the region were tribals called <b>Dasas</b>.
+        Later, <b>Aryans</b> came and they assimilated in the tribes. In the later centuries,
+        the hill chieftains accepted suzerainty of the <b>Mauryan empire</b>, the <b>Kaushans</b>, the
+        <b>Guptas</b> and <b>Kanuaj</b> rulers. During the Mughal period, the Rajas of the hill states made
+        some mutually agreed arrangements which governed their relations. In the 19th century,
+        Ranjit Singh annexed/subjugated many of the states. When the British came, they defeated
+        Gorkhas and entered into treaties with some Rajas and annexed the kingdoms of others.
+        The situation more or less remained unchanged till 1947.
+        After Independence, 30 princely states of the area were united and Himachal Pradesh
+        was formed on <b>15th April, 1948</b>. With the recognition of Punjab on <b>1st November,
+            1966</b>, certain areas belonging to it were also included in Himachal Pradesh. On <b>25th January,
+            1971</b>, Himachal Pradesh was made a full-fledged State. The State
+        is bordered by <b>Jammu and Kashmir</b> on North, <b>Punjab</b> on West and South-West,
+        <b>Haryana</b> on South, <b>Uttarakhand</b> on South-East and <b>China</b> on the East.</body></string>
+    <string name="general_info">General Info</string>
+    <string name="ministers">Ministers</string>
 </resources>

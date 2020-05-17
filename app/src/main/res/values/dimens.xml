@@ -10,4 +10,5 @@
     <dimen name="settingtext">16sp</dimen>
     <dimen name="mainName">20sp</dimen>
     <dimen name="imagedim">60dp</dimen>
+    <dimen name="infotext">20sp</dimen>
 </resources>

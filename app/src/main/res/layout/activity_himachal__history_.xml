@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/subMargin"
+                tools:context=".UI.Himachal_History_Activity">
+                    <ImageView
+                        android:id="@+id/ivHistoryImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:src="@drawable/stoneage"
+                        android:scaleType="centerCrop"
+                        />
+                    <TextView
+                        android:id="@+id/tvHistoryTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/mainText"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:text="Stone Age to the Middle Age"
+                        android:layout_marginVertical="@dimen/mainPadding"
+                        />
+
+                <TextView
+                    android:id="@+id/tvMainText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/titillium_web"
+                    android:text="@string/sampleData"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/infotext" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginVertical="@dimen/subMargin"
+                    >
+                    <ImageButton
+                        android:id="@+id/nextButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_previous"
+                        android:layout_alignParentLeft="true"
+                    />
+                    <ImageButton
+                        android:id="@+id/prevButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_next"
+                        android:layout_alignParentRight="true"
+                        />
+                </RelativeLayout>
+            </LinearLayout>
+    </ScrollView>
+</layout>

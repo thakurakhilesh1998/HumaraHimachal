@@ -47,4 +47,20 @@
         <item name="android:gravity">center_vertical</item>
         <item name="android:drawablePadding">@dimen/mainPadding</item>
     </style>
+    <style name="atGlanceHeading">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textSize">@dimen/mainText</item>
+        <item name="android:padding">@dimen/mainPadding</item>
+    </style>
+
+    <style name="glanceText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">@dimen/subHeading</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
 </resources>
