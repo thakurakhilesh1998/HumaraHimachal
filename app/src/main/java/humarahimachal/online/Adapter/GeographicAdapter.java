@@ -17,6 +17,7 @@ import humarahimachal.online.R;
 import humarahimachal.online.UI.HydroProjectActivity;
 import humarahimachal.online.UI.RiverActivity;
 import humarahimachal.online.UI.TempleActivity;
+import humarahimachal.online.UI.WildLifeSantuaryActivity;
 import humarahimachal.online.databinding.AboutviewBinding;
 
 public class GeographicAdapter extends RecyclerView.Adapter<GeographicAdapter.GeographicHolder> {
@@ -64,6 +65,15 @@ public class GeographicAdapter extends RecyclerView.Adapter<GeographicAdapter.Ge
                         break;
                     case 3:
                         context.startActivity(new Intent(context, HydroProjectActivity.class));
+                        break;
+                    case 4:
+                        Intent nationalPark=new Intent(context,TempleActivity.class);
+                        nationalPark.putExtra(context.getResources().getString(R.string.geographicextra),context.getResources().getString(R.string.nationalparkcheck));
+                        context.startActivity(nationalPark);
+                        break;
+                    case 5:
+                        context.startActivity(new Intent(context,WildLifeSantuaryActivity.class));
+                        break;
                 }
             }
         });

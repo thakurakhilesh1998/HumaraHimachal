@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:id="@+id/parentView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/subMargin"
+        android:layout_margin="@dimen/subMargin"
+        android:elevation="@dimen/ele"
+        android:background="@color/lightAccentColor"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tvSanctuaryName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
+            android:textSize="@dimen/mainText"
+            />
+        <LinearLayout
+            style="@style/linearRivers"
+            >
+
+            <TextView
+                style="@style/riverinfotext"
+                android:layout_height="wrap_content"
+                android:text="@string/situatedin"
+                />
+            <TextView
+                android:id="@+id/tvWildDistt"
+                android:text="Mansrover River"
+                style="@style/riverinfotext"
+                android:paddingVertical="@dimen/subMargin"
+                />
+        </LinearLayout>
+        <LinearLayout
+            style="@style/linearRivers"
+            >
+            <TextView
+                style="@style/riverinfotext"
+                android:text="@string/area_covered"
+                />
+            <TextView
+                android:id="@+id/tvWildArea"
+                android:text="Mansrover River"
+                style="@style/riverinfotext"
+                android:paddingVertical="@dimen/subMargin"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

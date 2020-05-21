@@ -1,9 +1,14 @@
 <resources>
     <string name="app_name">Humara Himachal</string>
     <string name="hydroTitle">HydroProjects</string>
+
     <string name="geographicextra">LoadKey</string>
     <string name="templecheck">temple</string>
     <string name="lakescheck">lakes</string>
+    <string name="nationalparkcheck">nationalpark</string>
+    <string name="situatedat">Situated At</string>
+    <string name="area_covered">Total Area Covered</string>
+
     <string name="riverstitle">Himachal Rivers</string>
     <string name="welcome">Welcome,</string>
     <string name="signin">Sign in to Continue,</string>
