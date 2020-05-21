@@ -14,6 +14,7 @@ import java.util.ArrayList;
 
 import humarahimachal.online.Modal.AboutModal;
 import humarahimachal.online.R;
+import humarahimachal.online.UI.GeographicActivity;
 import humarahimachal.online.UI.Himachal_At_Glance_Activity;
 import humarahimachal.online.UI.Himachal_History_Activity;
 import humarahimachal.online.databinding.AboutviewBinding;
@@ -56,6 +57,10 @@ public class AboutHimachalAdapter extends RecyclerView.Adapter<AboutHimachalAdap
                         break;
                     case 1:
                         context.startActivity(new Intent(context, Himachal_At_Glance_Activity.class));
+                        break;
+                    case 2:
+                        context.startActivity(new Intent(context, GeographicActivity.class));
+                        break;
                 }
             }
         });

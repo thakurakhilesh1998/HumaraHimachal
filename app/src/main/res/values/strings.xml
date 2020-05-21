@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">Humara Himachal</string>
-
+    <string name="hydroTitle">HydroProjects</string>
+    <string name="geographicextra">LoadKey</string>
+    <string name="templecheck">temple</string>
+    <string name="lakescheck">lakes</string>
+    <string name="riverstitle">Himachal Rivers</string>
     <string name="welcome">Welcome,</string>
     <string name="signin">Sign in to Continue,</string>
     <string name="login">Login</string>
@@ -36,6 +40,7 @@
     <string name="share_with_friends">Share With Friends</string>
     <string name="change_password">Change Password</string>
     <string name="About">About Himachal</string>
+    <string name="loadingData">Wait...Loading Data</string>
 
     <string name="history">Himachal History</string>
     <string name="atglance">Himachal At Glance</string>
@@ -53,20 +58,86 @@
         Certain law age brother sending amongst why covered.
             </body>
     </string>
-    <string name="atglanceinfo"><body style="text-align: center;">The earliest known inhabitants of the region were tribals called <b>Dasas</b>.
-        Later, <b>Aryans</b> came and they assimilated in the tribes. In the later centuries,
-        the hill chieftains accepted suzerainty of the <b>Mauryan empire</b>, the <b>Kaushans</b>, the
-        <b>Guptas</b> and <b>Kanuaj</b> rulers. During the Mughal period, the Rajas of the hill states made
-        some mutually agreed arrangements which governed their relations. In the 19th century,
-        Ranjit Singh annexed/subjugated many of the states. When the British came, they defeated
-        Gorkhas and entered into treaties with some Rajas and annexed the kingdoms of others.
-        The situation more or less remained unchanged till 1947.
-        After Independence, 30 princely states of the area were united and Himachal Pradesh
-        was formed on <b>15th April, 1948</b>. With the recognition of Punjab on <b>1st November,
-            1966</b>, certain areas belonging to it were also included in Himachal Pradesh. On <b>25th January,
-            1971</b>, Himachal Pradesh was made a full-fledged State. The State
-        is bordered by <b>Jammu and Kashmir</b> on North, <b>Punjab</b> on West and South-West,
-        <b>Haryana</b> on South, <b>Uttarakhand</b> on South-East and <b>China</b> on the East.</body></string>
     <string name="general_info">General Info</string>
     <string name="ministers">Ministers</string>
+    <string name="rivers">Rivers</string>
+    <string name="temples">Temples</string>
+    <string name="lakes">Lakes</string>
+    <string name="nationalpark">National Park</string>
+    <string name="wildlifesantuary">WildLife Santuary</string>
+    <string name="heritage">UNESCO Heritage</string>
+    <string name="powerProjects">Hydroelectric Projects</string>
+
+    <!--   River Info Placeholder-->
+    <string name="originPlace">Origin Place</string>
+    <string name="hpentry">Enter Into Himachal At</string>
+    <string name="hpexit">Exit From Himachal At</string>
+    <string name="hpLength">Length In Himachal</string>
+    <string name="catchmentHp">Total Catchment In Himachal</string>
+    <string name="tributary">Tributary Rivers in Himachal</string>
+    <string name="mainPlace">Main Place on Bank in Himachal</string>
+    <string name="sansName">Sanskrit Name</string>
+    <string name="vedicName">Vedic Name</string>
+
+    <!--    River Info -->
+    <string name="satlujName">Satluj River</string>
+    <string name="satlujorginPlace">Mansrover Lake From Rakes Lake (Tibet)</string>
+    <string name="satlujhpEntry">Shipki Kinnaur</string>
+    <string name="satlujhpExit">Bhakhra Bilaspur</string>
+    <string name="satlujLen">320 km</string>
+    <string name="satlujCatch">20,000 Sq. KM.</string>
+    <string name="satlujTr">Baspa, Spiti, Nogli Khad, Soan River</string>
+    <string name="satlujF">Namgia, Kalpa, Rampur, Tattapani, Suni, and Bilaspur</string>
+    <string name="satlujS">Shatadru</string>
+    <string name="satlujv">Satadri</string>
+
+    <string name="BName">Beas River</string>
+    <string name="BOP">Rohtang Pass Kullu HP at Altitude 4,350m</string>
+    <string name="BOHP">Rohtang Pass Kullu HP at Altitude 4,350m</string>
+    <string name="BEHP">Mirthal Kangra</string>
+    <string name="BLHP">256 km</string>
+    <string name="BCHP">2,320 Sq.Km.</string>
+    <string name="BTHP">Awa, Banner, Banganga, Chakki, Uhl, Tirthan, Suketi, Sainj, Parvati, Patlikahal, Manuni, Luni, Hurla , Guj</string>
+    <string name="BMHP">Manali, Kullu, Mandi, Bajaura, Pandoh, Sujanpur, Tihra, Nadaun, Dehra-Gopipur</string>
+    <string name="BS">Vipasa</string>
+    <string name="BV">Arjakiya</string>
+
+    <string name="RNnam">Ravi River</string>
+    <string name="ROP">Bara Banghal(a branch of Dhauladhar) Kangra</string>
+    <string name="ROHP">Bara Banghal(a branch of Dhauladhar) Kangra</string>
+    <string name="REHP">Kheri Chamba</string>
+    <string name="RLHP">158 km</string>
+    <string name="Rchp">5,451 Sq.Km.</string>
+    <string name="RThp">Bhadal, Siul, Baira, Tant Giri</string>
+    <string name="RMhp">Bharmaur, Modhpur, Chamba Town</string>
+    <string name="RS">Irawati</string>
+    <string name="RV">Parushani</string>
+
+    <string name="CName">Chenab River</string>
+    <string name="COP">Baralacha La Pass Lahaul and Spiti Districts</string>
+    <string name="COHP">Baralacha La Pass Lahaul and Spiti Districts</string>
+    <string name="CEhp">Sansari Nala Chamba</string>
+    <string name="CLhp">122 km</string>
+    <string name="CChp">7,500 Sq. Km.</string>
+    <string name="CThp">Bhaga River, Chandra River</string>
+    <string name="CMhp">Tandi</string>
+    <string name="CS">Asikini</string>
+    <string name="CV">Chandrabhaga</string>
+
+    <string name="YName">Yamuna River</string>
+    <string name="YOP">Yamunotri in Gharwal Hills Utrakhand</string>
+    <string name="YOHP">Khadar Majri Sirmaur </string>
+    <string name="YEhp">Tajewala  Sirmaur</string>
+    <string name="YLhp">22 km</string>
+    <string name="YChp">2,320 Sq. Km.</string>
+    <string name="YThp">Tons, Pabbar, Giri Ganga</string>
+    <string name="YMhp">Paonta Sahib</string>
+    <string name="YS">Yamunotri</string>
+    <string name="YV">Kalindi</string>
+    <string name="situatedin">Situated In</string>
+    <string name="capacity">Capacity</string>
+    <string name="streamriver">Stream River</string>
+    <string name="main_river">Main River</string>
+    <string name="company">Company</string>
 </resources>
+

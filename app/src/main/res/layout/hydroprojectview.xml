@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:id="@+id/parentView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/subMargin"
+        android:layout_margin="@dimen/subMargin"
+        android:elevation="@dimen/ele"
+        android:background="@color/lightAccentColor"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tvHydroName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Satluj"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
+            android:textSize="@dimen/mainText"
+            />
+        <LinearLayout
+            style="@style/linearRivers"
+            >
+
+            <TextView
+                style="@style/riverinfotext"
+                android:layout_height="wrap_content"
+                android:text="@string/situatedin"
+                />
+            <TextView
+                android:id="@+id/tvDistrict"
+                android:text="Mansrover River"
+                style="@style/riverinfotext"
+                android:paddingVertical="@dimen/subMargin"
+                />
+        </LinearLayout>
+        <LinearLayout
+            style="@style/linearRivers"
+            >
+            <TextView
+                style="@style/riverinfotext"
+                android:text="@string/capacity"
+                />
+            <TextView
+                android:id="@+id/tvCapacity"
+                android:text="Mansrover River"
+                style="@style/riverinfotext"
+                android:paddingVertical="@dimen/subMargin"
+                />
+        </LinearLayout>
+        <LinearLayout
+            style="@style/linearRivers"
+            >
+            <TextView
+                style="@style/riverinfotext"
+                android:text="@string/streamriver"
+                />
+            <TextView
+                android:id="@+id/tvStremRiver"
+                android:text="Mansrover River"
+                style="@style/riverinfotext"
+                android:paddingVertical="@dimen/subMargin"
+                />
+        </LinearLayout>
+        <LinearLayout
+            style="@style/linearRivers"
+            >
+            <TextView
+                style="@style/riverinfotext"
+                android:text="@string/main_river"
+                />
+            <TextView
+                android:id="@+id/tvMainRiver"
+                android:text="Mansrover River"
+                style="@style/riverinfotext"
+                android:paddingVertical="@dimen/subMargin"
+                />
+        </LinearLayout>
+        <LinearLayout
+            style="@style/linearRivers"
+            >
+            <TextView
+                style="@style/riverinfotext"
+                android:text="@string/company"
+                />
+            <TextView
+                android:id="@+id/tvCompany"
+                android:text="Mansrover River"
+                style="@style/riverinfotext"
+                android:paddingVertical="@dimen/subMargin"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

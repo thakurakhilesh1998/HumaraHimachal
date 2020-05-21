@@ -1,48 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    >
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="@dimen/subMargin"
             android:orientation="vertical"
             tools:context=".UI.Himachal_At_Glance_Activity">
 
-            <TextView
-                style="@style/atGlanceHeading"
-                android:text="@string/atglance"
-                />
-            <TextView
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/infotext"
-                android:text="@string/atglanceinfo"
-                android:textColor="@color/black"
-                android:fontFamily="@font/titillium_web"
-                />
-            <TextView
-                android:text="@string/general_info"
-                style="@style/atGlanceHeading"
-                />
-            <androidx.recyclerview.widget.RecyclerView
+                app:tabMaxWidth="0dp"
+                app:tabBackground="@color/colorPrimary"
+                app:tabTextColor="@color/colorWhite"
+                app:tabRippleColor="@color/colorAccent"
+                app:tabIndicatorColor="@color/colorWhite"
+                >
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="General Info"
+                    android:icon="@drawable/info"
+                    />
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="match_parent"
+                    android:text="Minister"
+                    android:icon="@drawable/ministers"
+                    android:layout_height="wrap_content"/>
+            </com.google.android.material.tabs.TabLayout>
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPager"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/rvGeneralInfo"
-                />
-            <TextView
-                android:text="@string/ministers"
-                style="@style/atGlanceHeading"
-                />
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvMinisters"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="match_parent"/>
         </LinearLayout>
-    </ScrollView>
 </layout>

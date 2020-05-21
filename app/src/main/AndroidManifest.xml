@@ -9,9 +9,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UI.Himachal_At_Glance_Activity"
-            android:parentActivityName=".UI.About_Himachal_Activity"
+        <activity android:name=".UI.HydroProjectActivity"
+            android:parentActivityName=".UI.GeographicActivity"
             ></activity>
+        <activity
+            android:name=".UI.TempleActivity"
+            android:parentActivityName=".UI.GeographicActivity" />
+        <activity
+            android:name=".UI.RiverActivity"
+            android:parentActivityName=".UI.GeographicActivity" />
+        <activity
+            android:name=".UI.GeographicActivity"
+            android:parentActivityName=".UI.About_Himachal_Activity" />
+        <activity
+            android:name=".UI.Himachal_At_Glance_Activity"
+            android:parentActivityName=".UI.About_Himachal_Activity" />
         <activity
             android:name=".UI.Himachal_History_Activity"
             android:parentActivityName=".UI.About_Himachal_Activity" />

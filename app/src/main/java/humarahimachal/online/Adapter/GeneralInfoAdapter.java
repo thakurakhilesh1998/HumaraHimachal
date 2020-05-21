@@ -2,6 +2,7 @@ package humarahimachal.online.Adapter;
 
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -34,6 +35,15 @@ public class GeneralInfoAdapter extends RecyclerView.Adapter<GeneralInfoAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull GeneralInfoHolder holder, int position) {
+        if(position%2==0)
+        {
+            holder.atglancehpBinding.parentAtGlance.setBackgroundColor(context.getResources().getColor(R.color.lightAccentColor));
+        }
+        else
+        {
+            holder.atglancehpBinding.parentAtGlance.setBackgroundColor(context.getResources().getColor(R.color.colorPrimary));
+        }
+
         holder.atglancehpBinding.tvName.setText(generalData.get(position).getName());
         holder.atglancehpBinding.tvValue.setText(generalData.get(position).getValue());
     }
@@ -45,9 +55,9 @@ public class GeneralInfoAdapter extends RecyclerView.Adapter<GeneralInfoAdapter.
 
     public class GeneralInfoHolder extends RecyclerView.ViewHolder {
         AtglancehpBinding atglancehpBinding;
-
         public GeneralInfoHolder(@NonNull AtglancehpBinding atglancehpBinding) {
             super(atglancehpBinding.getRoot());
+            this.atglancehpBinding=atglancehpBinding;
         }
     }
 }

@@ -60,7 +60,21 @@
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">1</item>
-        <item name="android:textSize">@dimen/subHeading</item>
+        <item name="android:textSize">20sp</item>
         <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="riverinfotext">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/mainName</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:padding" tools:targetApi="o">@dimen/subMargin</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+    <style name="linearRivers">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
     </style>
 </resources>

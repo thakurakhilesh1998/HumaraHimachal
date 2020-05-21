@@ -39,8 +39,10 @@ dependencies {
     implementation 'com.mikhaellopez:circularimageview:4.2.0'
 
     //cloud firestore
-
     implementation 'com.google.firebase:firebase-firestore:21.4.3'
+
+    //Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
     implementation 'com.android.support:multidex:1.0.3'
 
