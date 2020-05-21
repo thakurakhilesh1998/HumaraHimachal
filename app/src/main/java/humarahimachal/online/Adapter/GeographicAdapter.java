@@ -74,6 +74,11 @@ public class GeographicAdapter extends RecyclerView.Adapter<GeographicAdapter.Ge
                     case 5:
                         context.startActivity(new Intent(context,WildLifeSantuaryActivity.class));
                         break;
+                    case 6:
+                        Intent heritage=new Intent(context,TempleActivity.class);
+                        heritage.putExtra(context.getResources().getString(R.string.geographicextra),context.getResources().getString(R.string.heritagecheck));
+                        context.startActivity(heritage);
+                        break;
                 }
             }
         });

@@ -6,6 +6,7 @@
     <string name="templecheck">temple</string>
     <string name="lakescheck">lakes</string>
     <string name="nationalparkcheck">nationalpark</string>
+    <string name="heritagecheck">worldheritage</string>
     <string name="situatedat">Situated At</string>
     <string name="area_covered">Total Area Covered</string>
 
@@ -69,7 +70,7 @@
     <string name="temples">Temples</string>
     <string name="lakes">Lakes</string>
     <string name="nationalpark">National Park</string>
-    <string name="wildlifesantuary">WildLife Santuary</string>
+    <string name="wildlifesantuary">WildLife Sanctuary</string>
     <string name="heritage">UNESCO Heritage</string>
     <string name="powerProjects">Hydroelectric Projects</string>
 
