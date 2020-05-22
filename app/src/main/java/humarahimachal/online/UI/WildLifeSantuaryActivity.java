@@ -24,6 +24,7 @@ import humarahimachal.online.databinding.ActivityWildLifeSantuaryBinding;
 
 public class WildLifeSantuaryActivity extends AppCompatActivity {
     private static final String TAG = "wildlife";
+    private static final String TITLE="Wild Life Sanctuary";
     private static final String FIRESTORE_WILDLIFE = "wildlifesanctuary";
     ArrayList<WildLifeModal> wildLifeList;
     FirebaseFirestore firebaseFirestore;
@@ -36,6 +37,7 @@ public class WildLifeSantuaryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wild_life_santuary);
         wildlifeBinding = DataBindingUtil.setContentView(this, R.layout.activity_wild_life_santuary);
+        getSupportActionBar().setTitle(TITLE);
         wildLifeList = new ArrayList<>();
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage(getResources().getString(R.string.loadingData));

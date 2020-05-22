@@ -43,6 +43,7 @@ public class TempleActivity extends AppCompatActivity {
         {
             loadData=i.getStringExtra(getResources().getString(R.string.geographicextra));
         }
+        getSupportActionBar().setTitle(loadData);
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage(getResources().getString(R.string.loadingData));
         progressDialog.setCancelable(false);

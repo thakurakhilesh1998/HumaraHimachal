@@ -55,29 +55,29 @@ public class GeographicAdapter extends RecyclerView.Adapter<GeographicAdapter.Ge
                         break;
                     case 1:
                         Intent temple = new Intent(context, TempleActivity.class);
-                        temple.putExtra(context.getResources().getString(R.string.geographicextra), context.getResources().getString(R.string.templecheck));
+                        temple.putExtra(context.getResources().getString(R.string.geographicextra), context.getResources().getString(R.string.lakescheck));
                         context.startActivity(temple);
                         break;
                     case 2:
-                        Intent lakes = new Intent(context, TempleActivity.class);
-                        lakes.putExtra(context.getResources().getString(R.string.geographicextra), context.getResources().getString(R.string.lakescheck));
-                        context.startActivity(lakes);
-                        break;
-                    case 3:
                         context.startActivity(new Intent(context, HydroProjectActivity.class));
                         break;
-                    case 4:
-                        Intent nationalPark=new Intent(context,TempleActivity.class);
-                        nationalPark.putExtra(context.getResources().getString(R.string.geographicextra),context.getResources().getString(R.string.nationalparkcheck));
+                    case 3:
+                        Intent nationalPark = new Intent(context, TempleActivity.class);
+                        nationalPark.putExtra(context.getResources().getString(R.string.geographicextra), context.getResources().getString(R.string.nationalparkcheck));
                         context.startActivity(nationalPark);
                         break;
+                    case 4:
+                        context.startActivity(new Intent(context, WildLifeSantuaryActivity.class));
+                        break;
                     case 5:
-                        context.startActivity(new Intent(context,WildLifeSantuaryActivity.class));
+                        Intent heritage = new Intent(context, TempleActivity.class);
+                        heritage.putExtra(context.getResources().getString(R.string.geographicextra), context.getResources().getString(R.string.heritagecheck));
+                        context.startActivity(heritage);
                         break;
                     case 6:
-                        Intent heritage=new Intent(context,TempleActivity.class);
-                        heritage.putExtra(context.getResources().getString(R.string.geographicextra),context.getResources().getString(R.string.heritagecheck));
-                        context.startActivity(heritage);
+                        Intent mountainPass = new Intent(context, TempleActivity.class);
+                        mountainPass.putExtra(context.getResources().getString(R.string.geographicextra), context.getResources().getString(R.string.mountainpasscheck));
+                        context.startActivity(mountainPass);
                         break;
                 }
             }

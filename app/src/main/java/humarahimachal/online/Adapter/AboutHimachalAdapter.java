@@ -17,6 +17,7 @@ import humarahimachal.online.R;
 import humarahimachal.online.UI.GeographicActivity;
 import humarahimachal.online.UI.Himachal_At_Glance_Activity;
 import humarahimachal.online.UI.Himachal_History_Activity;
+import humarahimachal.online.UI.TempleActivity;
 import humarahimachal.online.databinding.AboutviewBinding;
 
 public class AboutHimachalAdapter extends RecyclerView.Adapter<AboutHimachalAdapter.AboutHolder> {
@@ -61,6 +62,15 @@ public class AboutHimachalAdapter extends RecyclerView.Adapter<AboutHimachalAdap
                     case 2:
                         context.startActivity(new Intent(context, GeographicActivity.class));
                         break;
+                    case 3:
+                        Intent lakes = new Intent(context, TempleActivity.class);
+                        lakes.putExtra(context.getResources().getString(R.string.geographicextra), context.getResources().getString(R.string.templecheck));
+                        context.startActivity(lakes);
+                        break;
+                    case 4:
+                        Intent fairs = new Intent(context, TempleActivity.class);
+                        fairs.putExtra(context.getResources().getString(R.string.geographicextra), context.getResources().getString(R.string.fairscheck));
+                        context.startActivity(fairs);
                 }
             }
         });

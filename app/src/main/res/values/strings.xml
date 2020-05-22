@@ -7,8 +7,12 @@
     <string name="lakescheck">lakes</string>
     <string name="nationalparkcheck">nationalpark</string>
     <string name="heritagecheck">worldheritage</string>
+    <string name="mountainpasscheck">mountainpass</string>
+    <string name="fairscheck">Fairs and Festivals</string>
+
     <string name="situatedat">Situated At</string>
     <string name="area_covered">Total Area Covered</string>
+    <string name="fairandfestival">Fairs and Festivals</string>
 
     <string name="riverstitle">Himachal Rivers</string>
     <string name="welcome">Welcome,</string>
@@ -72,6 +76,7 @@
     <string name="nationalpark">National Park</string>
     <string name="wildlifesantuary">WildLife Sanctuary</string>
     <string name="heritage">UNESCO Heritage</string>
+    <string name="mountainpass">Mountain pass</string>
     <string name="powerProjects">Hydroelectric Projects</string>
 
     <!--   River Info Placeholder-->

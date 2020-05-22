@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="humarahimachal.online">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,9 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UI.WildLifeSantuaryActivity"
-            android:parentActivityName=".UI.GeographicActivity"
-            ></activity>
+        <activity
+            android:name=".UI.WildLifeSantuaryActivity"
+            android:parentActivityName=".UI.GeographicActivity" />
         <activity
             android:name=".UI.HydroProjectActivity"
             android:parentActivityName=".UI.GeographicActivity" />
@@ -53,6 +55,5 @@
             android:resource="@array/preloaded_fonts" />
     </application>
 
-    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
