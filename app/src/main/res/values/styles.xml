@@ -93,6 +93,6 @@
     </style>
 
     <style name="tablerow">
-        <item name="android:background">@drawable/tabelrow</item>
+        <item name="android:background">@drawable/districtfact</item>
     </style>
 </resources>

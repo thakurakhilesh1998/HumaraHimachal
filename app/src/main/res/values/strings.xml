@@ -2,6 +2,7 @@
     <string name="app_name">Humara Himachal</string>
     <string name="hydroTitle">HydroProjects</string>
 
+    <string name="notavailable">Not Available</string>
     <string name="geographicextra">LoadKey</string>
     <string name="templecheck">temple</string>
     <string name="lakescheck">lakes</string>
@@ -11,7 +12,8 @@
     <string name="fairscheck">Fairs and Festivals</string>
 
     <string name="districtDaTa">Himachal Districts</string>
-    
+    <string name="somethingwrong">Something Went Wrong</string>
+
     <string name="districtfragment">districtbundle</string>
 
     <string name="situatedat">Situated At</string>
@@ -55,6 +57,7 @@
     <string name="change_password">Change Password</string>
     <string name="About">About Himachal</string>
     <string name="loadingData">Wait...Loading Data</string>
+    <string name="read_more"><u>Read More</u></string>
 
     <string name="history">Himachal History</string>
     <string name="atglance">Himachal At Glance</string>

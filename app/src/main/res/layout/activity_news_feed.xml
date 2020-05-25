@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:background="@color/lighPrimaryColor"
+        android:layout_height="match_parent"
+        android:id="@+id/relativeLayout"
+        tools:context=".MainActivity">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvNewsArticles"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
+        <cz.intik.overflowindicator.OverflowPagerIndicator
+            android:id="@+id/view_pager_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            />
+        <TextView
+            android:id="@+id/tvSomeThing"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/somethingwrong"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="@dimen/mainText"
+            android:visibility="gone"
+            android:gravity="center_horizontal|center_vertical"
+            />
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/progrssBar"
+            style="@style/SpinKitView.Large.Circle"
+            app:SpinKit_Color="@color/colorAccent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            />
+
+
+    </RelativeLayout>
+</layout>
