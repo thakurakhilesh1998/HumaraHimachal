@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 
 import humarahimachal.online.R;
 import humarahimachal.online.UI.About_Himachal_Activity;
+import humarahimachal.online.UI.DistrictActivity;
 import humarahimachal.online.databinding.HomeFragmentBinding;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
@@ -31,6 +32,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         homeBinding.about.setOnClickListener(this);
+        homeBinding.districts.setOnClickListener(this);
     }
 
     @Override
@@ -38,7 +40,15 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         switch (view.getId()) {
             case R.id.about:
                 openAboutActivity();
+                break;
+            case R.id.districts:
+                openDistrictActivity();
+                break;
         }
+    }
+
+    private void openDistrictActivity() {
+        startActivity(new Intent(getContext(), DistrictActivity.class));
     }
 
     private void openAboutActivity() {

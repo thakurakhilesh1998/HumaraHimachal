@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/mainPadding">
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/lightAccentColor"
+                android:padding="@dimen/ele"
+                android:text="Bilaspur"
+                android:textAlignment="center"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/mainText" />
+
+            <TextView
+                android:id="@+id/tvHistory"
+                android:padding="@dimen/subMargin"
+                android:textSize="@dimen/settingtext"
+                android:gravity="start"
+                android:layout_marginVertical="@dimen/subMargin"
+                android:textColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/lightAccentColor"
+                android:padding="@dimen/ele"
+                android:text="@string/district_fact"
+                android:textAlignment="center"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/mainText" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*"
+                android:layout_marginVertical="@dimen/mainPadding"
+                >
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/tablerow"
+                    >
+
+                    <TextView
+                        style="@style/districtFactView"
+                        android:text="@string/reorganized_as_district" />
+
+                    <TextView
+                        android:id="@+id/tvReorganized"
+                        style="@style/districtFactView"
+                        />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/tablerow"
+                    >
+                    <TextView
+                        android:id="@+id/tvAncientPlace"
+                        style="@style/districtFactView"
+                        android:text="@string/ancient_name"
+                        />
+                    <TextView
+                        android:id="@+id/tvAncientName"
+                        style="@style/districtFactView"
+                        />
+                </TableRow>
+
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/tablerow"
+                    >
+                    <TextView
+                        style="@style/districtFactView"
+                        android:text="@string/district_headquarter"
+                        />
+                    <TextView
+                        android:id="@+id/tvheadquarter"
+                        style="@style/districtFactView"
+                        />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/tablerow"
+                    >
+                    <TextView
+                        style="@style/districtFactView"
+                        android:text="@string/deputy_commissioner"
+                        />
+                    <TextView
+                        android:id="@+id/tvDc"
+                        style="@style/districtFactView"
+                        />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/tablerow"
+                    >
+                    <TextView
+                        style="@style/districtFactView"
+                        android:text="@string/area"
+                        />
+                    <TextView
+                        android:id="@+id/tvArea"
+                        style="@style/districtFactView"
+                        />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/tablerow"
+                    >
+                    <TextView
+                        style="@style/districtFactView"
+                        android:text="@string/population"
+                        />
+                    <TextView
+                        android:id="@+id/tvPopulation"
+                        style="@style/districtFactView"
+                        />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/tablerow"
+                    >
+                    <TextView
+                        style="@style/districtFactView"
+                        android:text="@string/male_population"
+                        />
+                    <TextView
+                        android:id="@+id/tvPopulationMale"
+                        style="@style/districtFactView"
+                        />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/tablerow"
+                    >
+                    <TextView
+                        style="@style/districtFactView"
+                        android:text="@string/female_pop"
+                        />
+                    <TextView
+                        android:id="@+id/tvPopulationFeMale"
+                        style="@style/districtFactView"
+                        />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/tablerow"
+                    >
+                    <TextView
+                        style="@style/districtFactView"
+                        android:text="@string/density_population_per_km"
+                        />
+                    <TextView
+                        android:id="@+id/tvPopDensity"
+                        style="@style/districtFactView"
+                        />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/tablerow"
+                    >
+                    <TextView
+                        android:id="@+id/tvRiverPlace"
+                        style="@style/districtFactView"
+                        android:text="@string/river"
+                        />
+                    <TextView
+                        android:id="@+id/tvRiver"
+                        style="@style/districtFactView"
+                        />
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/tablerow"
+                    >
+                    <TextView
+                        style="@style/districtFactView"
+                        android:text="@string/total_number_of_assembly_constituencies"
+                        />
+                    <TextView
+                        style="@style/districtFactView"
+                        android:id="@+id/tvAssConst"
+                        />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/tablerow"
+                    >
+                    <TextView
+                        style="@style/districtFactView"
+                        android:text="@string/tehsiles"
+                        />
+                    <TextView
+                        android:id="@+id/tvTeh"
+                        style="@style/districtFactView"
+                        />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/tablerow"
+                    >
+                    <TextView
+                        style="@style/districtFactView"
+                        android:text="@string/neigh"
+                        />
+                    <TextView
+                        android:id="@+id/tvNeigh"
+                        style="@style/districtFactView"
+                        />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/tablerow"
+                    >
+                    <TextView
+                        style="@style/districtFactView"
+                        android:text="@string/off_web"
+                        />
+                    <TextView
+                        android:id="@+id/tvWeb"
+                        style="@style/districtFactView"
+                        />
+                </TableRow>
+
+            </TableLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

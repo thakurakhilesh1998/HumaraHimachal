@@ -11,16 +11,18 @@
     <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="android:windowBackground">@drawable/spash_image</item>
     </style>
+
     <style name="Registerandlogin" parent="Theme.AppCompat.Light">
         <item name="android:windowNoTitle">true</item>
     </style>
+
     <style name="editText">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">@dimen/subMargin</item>
         <item name="android:paddingVertical" tools:targetApi="o">@dimen/mainPadding</item>
     </style>
-    
+
     <style name="cardview">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -28,6 +30,7 @@
         <item name="android:layout_margin">@dimen/mainPadding</item>
         <item name="android:background">@color/lighPrimaryColor</item>
     </style>
+
     <style name="cardtextview">
 
         <item name="android:layout_width">wrap_content</item>
@@ -37,6 +40,7 @@
         <item name="android:layout_marginTop">@dimen/mainPadding</item>
         <item name="android:textSize">16sp</item>
     </style>
+
     <style name="settingTextView">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -47,6 +51,7 @@
         <item name="android:gravity">center_vertical</item>
         <item name="android:drawablePadding">@dimen/mainPadding</item>
     </style>
+
     <style name="atGlanceHeading">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -72,9 +77,22 @@
         <item name="android:padding" tools:targetApi="o">@dimen/subMargin</item>
         <item name="android:layout_weight">1</item>
     </style>
+
     <style name="linearRivers">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="districtFactView">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/settingtext</item>
+        <item name="android:padding">@dimen/subMargin</item>
+    </style>
+
+    <style name="tablerow">
+        <item name="android:background">@drawable/tabelrow</item>
     </style>
 </resources>

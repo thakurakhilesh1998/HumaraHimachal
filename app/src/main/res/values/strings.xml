@@ -10,6 +10,10 @@
     <string name="mountainpasscheck">mountainpass</string>
     <string name="fairscheck">Fairs and Festivals</string>
 
+    <string name="districtDaTa">Himachal Districts</string>
+    
+    <string name="districtfragment">districtbundle</string>
+
     <string name="situatedat">Situated At</string>
     <string name="area_covered">Total Area Covered</string>
     <string name="fairandfestival">Fairs and Festivals</string>
@@ -70,7 +74,7 @@
     </string>
     <string name="general_info">General Info</string>
     <string name="ministers">Ministers</string>
-    <string name="rivers">Rivers</string>
+    <string name="river">Rivers</string>
     <string name="temples">Temples</string>
     <string name="lakes">Lakes</string>
     <string name="nationalpark">National Park</string>
@@ -150,5 +154,22 @@
     <string name="streamriver">Stream River</string>
     <string name="main_river">Main River</string>
     <string name="company">Company</string>
+    <string name="district_fact">District Fact</string>
+    <string name="district_headquarter">District Headquarter</string>
+    <string name="founded_in">Founded In</string>
+    <string name="tehsiles">Tehsiles</string>
+    <string name="ancient_name">Ancient Name</string>
+    <string name="reorganized_as_district">Reorganized as district</string>
+    <string name="deputy_commissioner">Deputy Commissioner</string>
+    <string name="area">Area</string>
+    <string name="population">Population</string>
+    <string name="male_population">Male Population</string>
+    <string name="female_pop">Female Population</string>
+    <string name="density_population_per_km">Density Population Per Km.</string>
+    <string name="total_number_of_assembly_constituencies">Total Number of assembly constituencies</string>
+    <string name="tehsils">Tehsils</string>
+    <string name="neigh">Neighbours</string>
+    <string name="off_web">Official Website</string>
+    <string name="rivers">Rivers</string>
 </resources>
 
