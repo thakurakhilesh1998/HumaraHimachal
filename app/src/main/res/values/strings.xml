@@ -2,6 +2,9 @@
     <string name="app_name">Humara Himachal</string>
     <string name="hydroTitle">HydroProjects</string>
 
+    <string name="admobappid">ca-app-pub-5610974152568383~4435266663</string>
+    <string name="bannerid">ca-app-pub-5610974152568383~4435266663</string>
+
     <string name="notavailable">Not Available</string>
     <string name="geographicextra">LoadKey</string>
     <string name="templecheck">temple</string>
@@ -182,5 +185,6 @@
     <string name="off_web">Official Website</string>
     <string name="rivers">Rivers</string>
     <string name="notconnected_connect">Not Connected to internet! Please connect to intenet</string>
+    <string name="contact_us_email">For any query write us on: humarahimachalapp@gmail.com</string>
 </resources>
 

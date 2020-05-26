@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -11,6 +11,56 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvHydroProject"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_weight="1"
+            />
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            ads:adSize="BANNER"
+            ads:adUnitId="@string/bannerid"/>
+
+        <LinearLayout
+            android:id="@+id/notConnectedView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_not_connected" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginVertical="@dimen/mainPadding"
+                android:padding="@dimen/mainPadding"
+                android:text="@string/notconnected_connect"
+                android:textColor="@color/black"
+                android:textSize="@dimen/settingtext"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnTryAgain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/lightAccentColor"
+                android:elevation="@dimen/ele"
+                android:padding="@dimen/mainPadding"
+                android:text="Try Again"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/settingtext" />
+        </LinearLayout>
+
     </LinearLayout>
 </layout>

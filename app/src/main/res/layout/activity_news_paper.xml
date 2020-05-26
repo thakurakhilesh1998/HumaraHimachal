@@ -15,18 +15,6 @@
             android:orientation="vertical"
             android:visibility="gone">
 
-            <Button
-                android:id="@+id/btnTryAgain"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:background="@color/lightAccentColor"
-                android:elevation="@dimen/ele"
-                android:padding="@dimen/mainPadding"
-                android:text="Try Again"
-                android:textColor="@color/colorWhite"
-                android:textSize="@dimen/settingtext" />
-
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -43,6 +31,18 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/settingtext"
                 android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnTryAgain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/lightAccentColor"
+                android:elevation="@dimen/ele"
+                android:padding="@dimen/mainPadding"
+                android:text="Try Again"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/settingtext" />
         </LinearLayout>
 
         <com.github.ybq.android.spinkit.SpinKitView

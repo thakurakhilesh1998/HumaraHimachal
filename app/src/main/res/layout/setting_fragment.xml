@@ -5,10 +5,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     <LinearLayout
+        android:id="@+id/parentView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@color/colorWhite"
         >
         <LinearLayout
             android:layout_width="match_parent"
@@ -38,18 +38,18 @@
                 android:layout_gravity="center_vertical"
                 >
                 <TextView
+                    android:id="@+id/tvName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/mainName"
                     android:textColor="@color/black"
-                    android:text="Akhilesh Thakur"
                     />
                 <TextView
+                    android:id="@+id/tvEmail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/settingtext"
                     android:textColor="@color/black"
-                    android:text="thakurakhilesh20@gmail.com"
                     />
             </LinearLayout>
         </LinearLayout>
@@ -73,16 +73,16 @@
                 android:text="@string/share_with_friends" />
 
             <TextView
-                android:id="@+id/contactus"
-                style="@style/settingTextView"
-                android:text="@string/contact_us"
-                android:drawableLeft="@drawable/contactus"
-                />
-            <TextView
                 android:id="@+id/logout"
                 style="@style/settingTextView"
                 android:text="@string/logout"
                 android:drawableLeft="@drawable/logout"
+                />
+            <TextView
+                android:id="@+id/contactUs"
+                style="@style/settingTextView"
+                android:text="@string/contact_us_email"
+                android:drawableLeft="@drawable/contactus"
                 />
         </LinearLayout>
     </LinearLayout>

@@ -3,6 +3,7 @@ package humarahimachal.online.UI;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +11,10 @@ import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -37,7 +42,7 @@ public class HydroProjectActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hydro_project);
         getSupportActionBar().setTitle(getResources().getString(R.string.hydroTitle));
-        progressDialog=new ProgressDialog(this);
+        progressDialog = new ProgressDialog(this);
         progressDialog.setMessage(getResources().getString(R.string.loadingData));
         progressDialog.setCancelable(false);
         progressDialog.show();
@@ -48,7 +53,20 @@ public class HydroProjectActivity extends AppCompatActivity {
         projectBinding.rvHydroProject.setLayoutManager(layoutManager);
         hydroProjectAdapter = new HydroProjectAdapter(this, hydroList);
         projectBinding.rvHydroProject.setAdapter(hydroProjectAdapter);
+        addAds();
         getDataFromFireStore();
+    }
+
+    private void addAds() {
+
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+        AdRequest adRequest = new AdRequest.Builder().build();
+        projectBinding.adView.loadAd(adRequest);
+
     }
 
     private void getDataFromFireStore() {
@@ -59,6 +77,7 @@ public class HydroProjectActivity extends AppCompatActivity {
                     progressDialog.dismiss();
                     HydroModal hydroModal = d.toObject(HydroModal.class);
                     hydroList.add(hydroModal);
+                    projectBinding.rvHydroProject.setVisibility(View.VISIBLE);
                 }
                 hydroProjectAdapter.notifyDataSetChanged();
             }
@@ -66,6 +85,8 @@ public class HydroProjectActivity extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Exception e) {
                 progressDialog.dismiss();
+                projectBinding.rvHydroProject.setVisibility(View.GONE);
+                projectBinding.notConnectedView.setVisibility(View.VISIBLE);
                 Log.i(TAG, e.getMessage());
             }
         });

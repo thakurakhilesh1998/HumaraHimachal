@@ -12,12 +12,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/admobappid"/>
+
         <activity android:name=".UI.NewsPaperActivity"
             android:parentActivityName=".UI.HomePage"
             ></activity>
         <activity
             android:name=".UI.NewsFeedActivity"
-            android:parentActivityName=".UI.HomePage" />
+            android:parentActivityName=".UI.HomePage"
+            android:screenOrientation="portrait"
+            />
         <activity
             android:name=".UI.WildLifeSantuaryActivity"
             android:parentActivityName=".UI.GeographicActivity" />
@@ -45,7 +52,9 @@
         <activity
             android:name=".UI.About_Himachal_Activity"
             android:parentActivityName=".UI.HomePage" />
-        <activity android:name=".UI.HomePage" />
+        <activity android:name=".UI.HomePage"
+            android:screenOrientation="portrait"
+            />
         <activity android:name=".UI.RegisterActivity" />
         <activity android:name=".UI.LoginActivity" />
         <activity
