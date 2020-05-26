@@ -21,13 +21,14 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 
+import cz.intik.overflowindicator.SimpleSnapHelper;
 import humarahimachal.online.Adapter.NewsAdapter;
 import humarahimachal.online.Modal.NewsDataModal;
 import humarahimachal.online.R;
 import humarahimachal.online.Utils.NewsNetworikUtil;
 import humarahimachal.online.databinding.ActivityNewsFeedBinding;
 
-public class NewsFeedActivity extends AppCompatActivity {
+public class NewsFeedActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String ARTICLES = "articles";
     private static final String SOURCES = "source";
     private static final String URL_TO_IMAGE = "urlToImage";
@@ -48,16 +49,40 @@ public class NewsFeedActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_feed);
         newsFeedBinding = DataBindingUtil.setContentView(this, R.layout.activity_news_feed);
+        getSupportActionBar().setTitle(getResources().getString(R.string.newsfeed));
         doubleBounce = new Wave();
         newsFeedBinding.progrssBar.setIndeterminateDrawable(doubleBounce);
         newsDataLoader = new NewsFeedLoader();
         newsList = new ArrayList<>();
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
-        newsFeedBinding.rvNewsArticles.setLayoutManager(layoutManager);
-        newsAdapter = new NewsAdapter(this, newsList);
-        newsFeedBinding.rvNewsArticles.setAdapter(newsAdapter);
-        newsDataLoader.execute();
+        newsFeedBinding.btnTryAgain.setOnClickListener(this);
+        if (NewsNetworikUtil.isConnectedToInternet(this)) {
+            LinearLayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
+            newsFeedBinding.rvNewsArticles.setLayoutManager(layoutManager);
+            newsAdapter = new NewsAdapter(this, newsList);
+            newsFeedBinding.rvNewsArticles.setAdapter(newsAdapter);
+            addCardLikeFunctionality();
+            newsDataLoader.execute();
+        } else {
+            newsFeedBinding.relativeLayout.setBackgroundColor(getResources().getColor(R.color.colorWhite));
+            newsFeedBinding.notConnectedView.setVisibility(View.VISIBLE);
+        }
 
+    }
+
+    private void addCardLikeFunctionality() {
+        newsFeedBinding.viewPagerIndicator.attachToRecyclerView(newsFeedBinding.rvNewsArticles);
+        SimpleSnapHelper pageSnapHelper = new SimpleSnapHelper(newsFeedBinding.viewPagerIndicator);
+        newsFeedBinding.rvNewsArticles.setOnFlingListener(null);
+        pageSnapHelper.attachToRecyclerView(newsFeedBinding.rvNewsArticles);
+    }
+
+    @Override
+    public void onClick(View view) {
+        if(view.getId()==R.id.btnTryAgain)
+        {
+            finish();
+            startActivity(getIntent());
+        }
     }
 
     public class NewsFeedLoader extends AsyncTask<Void, Void, ArrayList<NewsDataModal>> {
@@ -85,6 +110,9 @@ public class NewsFeedActivity extends AppCompatActivity {
                 newsFeedBinding.rvNewsArticles.setVisibility(View.VISIBLE);
                 newsFeedBinding.progrssBar.setVisibility(View.GONE);
                 newsAdapter.notifyDataSetChanged();
+            } else {
+                newsFeedBinding.relativeLayout.setBackgroundColor(getResources().getColor(R.color.colorWhite));
+                newsFeedBinding.notConnectedView.setVisibility(View.VISIBLE);
             }
 
         }

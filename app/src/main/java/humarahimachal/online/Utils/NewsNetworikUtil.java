@@ -1,5 +1,7 @@
 package humarahimachal.online.Utils;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
 import android.net.Uri;
 
 import java.io.BufferedReader;
@@ -72,5 +74,11 @@ public class NewsNetworikUtil {
             inputStream.close();
         }
         return stringBuilder.toString();
+    }
+
+    public static Boolean isConnectedToInternet(Context context) {
+
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(context.CONNECTIVITY_SERVICE);
+        return cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isConnected();
     }
 }

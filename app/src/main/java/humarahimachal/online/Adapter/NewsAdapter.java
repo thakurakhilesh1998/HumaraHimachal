@@ -1,7 +1,10 @@
 package humarahimachal.online.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -36,7 +39,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull NewsHolder holder, int position) {
+    public void onBindViewHolder(@NonNull NewsHolder holder, final int position) {
         if (newsList.get(position) == null) {
             holder.newsitemBinding.ivNews.setImageResource(R.drawable.ic_news_icon);
 
@@ -44,18 +47,36 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsHolder> {
 
             Picasso.get().load(newsList.get(position).getImageUrl()).into(holder.newsitemBinding.ivNews);
         }
-        if(newsList.get(position).getDesc()==null)
-        {
+        if (newsList.get(position).getDesc() == null) {
             holder.newsitemBinding.tvDes.setText(context.getResources().getString(R.string.notavailable));
-        }
-        else
-        {
+        } else {
             holder.newsitemBinding.tvDes.setText(newsList.get(position).getDesc());
         }
-        
-        holder.newsitemBinding.tvPublishDate.setText(newsList.get(position).getDate());
-        holder.newsitemBinding.tvSource.setText(newsList.get(position).getSource());
-        holder.newsitemBinding.tvTitle.setText(newsList.get(position).getTitle());
+
+        if (newsList.get(position).getDate() == null) {
+            holder.newsitemBinding.tvPublishDate.setText(context.getResources().getString(R.string.notavailable));
+        } else {
+            holder.newsitemBinding.tvPublishDate.setText(context.getResources().getString(R.string.publishedat) + " " + newsList.get(position).getDate().substring(0, 10));
+        }
+        if (newsList.get(position).getSource() == null) {
+            holder.newsitemBinding.tvSource.setText(context.getResources().getString(R.string.notavailable));
+        } else {
+            holder.newsitemBinding.tvSource.setText(context.getResources().getString(R.string.source) + " " + newsList.get(position).getSource());
+        }
+        if (newsList.get(position).getTitle() == null) {
+            holder.newsitemBinding.tvTitle.setText(context.getResources().getString(R.string.notavailable));
+        } else {
+            holder.newsitemBinding.tvTitle.setText(newsList.get(position).getTitle());
+        }
+
+        holder.newsitemBinding.tvLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(newsList.get(position).getUrlToSource()));
+                context.startActivity(Intent.createChooser(intent, context.getResources().getString(R.string.open)));
+            }
+        });
+
     }
 
     @Override

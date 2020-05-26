@@ -59,6 +59,13 @@
     <string name="loadingData">Wait...Loading Data</string>
     <string name="read_more"><u>Read More</u></string>
 
+    <string name="weeklynewspaper">Weekly Newspaper</string>
+    <string name="newspaper">News Paper</string>
+
+    <string name="publishedat">Published At:</string>
+    <string name="source">Source:</string>
+    <string name="open">Open With</string>
+    <string name="newsfeed">News Feed</string>
     <string name="history">Himachal History</string>
     <string name="atglance">Himachal At Glance</string>
     <string name="geography">Himachal Geography</string>
@@ -174,5 +181,6 @@
     <string name="neigh">Neighbours</string>
     <string name="off_web">Official Website</string>
     <string name="rivers">Rivers</string>
+    <string name="notconnected_connect">Not Connected to internet! Please connect to intenet</string>
 </resources>
 

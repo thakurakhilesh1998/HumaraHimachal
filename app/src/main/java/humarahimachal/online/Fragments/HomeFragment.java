@@ -15,6 +15,7 @@ import humarahimachal.online.R;
 import humarahimachal.online.UI.About_Himachal_Activity;
 import humarahimachal.online.UI.DistrictActivity;
 import humarahimachal.online.UI.NewsFeedActivity;
+import humarahimachal.online.UI.NewsPaperActivity;
 import humarahimachal.online.databinding.HomeFragmentBinding;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
@@ -35,6 +36,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         homeBinding.about.setOnClickListener(this);
         homeBinding.districts.setOnClickListener(this);
         homeBinding.news.setOnClickListener(this);
+        homeBinding.newspaper.setOnClickListener(this);
     }
 
     @Override
@@ -49,7 +51,14 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             case R.id.news:
                 openNewsFeed();
                 break;
+            case R.id.newspaper:
+                onNewsPaperClick();
+                break;
         }
+    }
+
+    private void onNewsPaperClick() {
+        startActivity(new Intent(getContext(), NewsPaperActivity.class));
     }
 
     private void openNewsFeed() {

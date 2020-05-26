@@ -20,17 +20,6 @@
             android:layout_height="wrap_content"
             android:visibility="gone"
             />
-        <TextView
-            android:id="@+id/tvSomeThing"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/somethingwrong"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textSize="@dimen/mainText"
-            android:visibility="gone"
-            android:gravity="center_horizontal|center_vertical"
-            />
         <com.github.ybq.android.spinkit.SpinKitView
             android:id="@+id/progrssBar"
             style="@style/SpinKitView.Large.Circle"
@@ -42,6 +31,46 @@
             android:layout_centerVertical="true"
             android:visibility="gone"
             />
+        <LinearLayout
+            android:id="@+id/notConnectedView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_not_connected"
+                android:layout_gravity="center_horizontal"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/notconnected_connect"
+                android:layout_gravity="center_horizontal"
+                android:padding="@dimen/mainPadding"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginVertical="@dimen/mainPadding"
+                android:textSize="@dimen/settingtext"
+                />
+            <Button
+                android:id="@+id/btnTryAgain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/lightAccentColor"
+                android:padding="@dimen/mainPadding"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/settingtext"
+                android:elevation="@dimen/ele"
+                android:layout_gravity="center_horizontal"
+                android:text="Try Again"
+                />
+        </LinearLayout>
 
 
     </RelativeLayout>
