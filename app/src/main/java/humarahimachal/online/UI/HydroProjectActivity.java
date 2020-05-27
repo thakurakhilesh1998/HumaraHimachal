@@ -2,7 +2,6 @@ package humarahimachal.online.UI;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -11,7 +10,11 @@ import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.github.ybq.android.spinkit.sprite.Sprite;
+import com.github.ybq.android.spinkit.style.Wave;
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
@@ -28,33 +31,41 @@ import humarahimachal.online.Modal.HydroModal;
 import humarahimachal.online.R;
 import humarahimachal.online.databinding.ActivityHydroProjectBinding;
 
-public class HydroProjectActivity extends AppCompatActivity {
+public class HydroProjectActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "hydroprojectactivity";
     private static final String DOCUMENT = "hydroelectricpojects";
     FirebaseFirestore firebaseFirestore;
     ArrayList<HydroModal> hydroList;
     ActivityHydroProjectBinding projectBinding;
     HydroProjectAdapter hydroProjectAdapter;
-    ProgressDialog progressDialog;
+    Sprite doubleBounce;
+    private InterstitialAd mInterstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hydro_project);
         getSupportActionBar().setTitle(getResources().getString(R.string.hydroTitle));
-        progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage(getResources().getString(R.string.loadingData));
-        progressDialog.setCancelable(false);
-        progressDialog.show();
         hydroList = new ArrayList<>();
         projectBinding = DataBindingUtil.setContentView(this, R.layout.activity_hydro_project);
+        doubleBounce = new Wave();
+        projectBinding.progrssBar.setIndeterminateDrawable(doubleBounce);
+        projectBinding.progrssBar.setVisibility(View.VISIBLE);
         firebaseFirestore = FirebaseFirestore.getInstance();
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
         projectBinding.rvHydroProject.setLayoutManager(layoutManager);
         hydroProjectAdapter = new HydroProjectAdapter(this, hydroList);
         projectBinding.rvHydroProject.setAdapter(hydroProjectAdapter);
+        projectBinding.btnTryAgain.setOnClickListener(this);
         addAds();
         getDataFromFireStore();
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                super.onAdLoaded();
+                mInterstitialAd.show();
+            }
+        });
     }
 
     private void addAds() {
@@ -66,6 +77,10 @@ public class HydroProjectActivity extends AppCompatActivity {
         });
         AdRequest adRequest = new AdRequest.Builder().build();
         projectBinding.adView.loadAd(adRequest);
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId(getString(R.string.interstialid));
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+
 
     }
 
@@ -73,22 +88,38 @@ public class HydroProjectActivity extends AppCompatActivity {
         firebaseFirestore.collection(DOCUMENT).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                for (DocumentSnapshot d : queryDocumentSnapshots.getDocuments()) {
-                    progressDialog.dismiss();
-                    HydroModal hydroModal = d.toObject(HydroModal.class);
-                    hydroList.add(hydroModal);
+                if (!queryDocumentSnapshots.isEmpty()) {
+                    projectBinding.progrssBar.setVisibility(View.GONE);
                     projectBinding.rvHydroProject.setVisibility(View.VISIBLE);
+                    for (DocumentSnapshot d : queryDocumentSnapshots.getDocuments()) {
+                        HydroModal hydroModal = d.toObject(HydroModal.class);
+                        hydroList.add(hydroModal);
+                        projectBinding.rvHydroProject.setVisibility(View.VISIBLE);
+                    }
+                    hydroProjectAdapter.notifyDataSetChanged();
+                } else {
+                    projectBinding.progrssBar.setVisibility(View.GONE);
+                    projectBinding.rvHydroProject.setVisibility(View.GONE);
+                    projectBinding.notConnectedView.setVisibility(View.VISIBLE);
                 }
-                hydroProjectAdapter.notifyDataSetChanged();
+
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                progressDialog.dismiss();
+                projectBinding.progrssBar.setVisibility(View.GONE);
                 projectBinding.rvHydroProject.setVisibility(View.GONE);
                 projectBinding.notConnectedView.setVisibility(View.VISIBLE);
-                Log.i(TAG, e.getMessage());
             }
         });
+    }
+
+    @Override
+    public void onClick(View view) {
+        if(view.getId()==R.id.btnTryAgain)
+        {
+            finish();
+            startActivity(getIntent());
+        }
     }
 }
