@@ -2,7 +2,9 @@ package humarahimachal.online.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
@@ -36,9 +38,9 @@ public class RiverAdapter extends RecyclerView.Adapter<RiverAdapter.RiverHolder>
     @Override
     public void onBindViewHolder(@NonNull RiverHolder holder, int position) {
         if (position % 2 == 0) {
-            holder.itemView.parentView.setBackgroundColor(context.getResources().getColor(R.color.lightAccentColor));
+            holder.itemView.parentView.setBackgroundColor(context.getResources().getColor(R.color.colorAccent));
         } else {
-            holder.itemView.parentView.setBackgroundColor(context.getResources().getColor(R.color.colorPrimary));
+            holder.itemView.parentView.setBackgroundColor(context.getResources().getColor(R.color.colorPrimaryDark));
         }
 
         holder.itemView.tvCatchmentHP.setText(riverInfo.get(position).getCatchmentArea());
