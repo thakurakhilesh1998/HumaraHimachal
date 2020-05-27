@@ -1,12 +1,17 @@
 package humarahimachal.online.UI;
 
-import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.github.ybq.android.spinkit.sprite.Sprite;
+import com.github.ybq.android.spinkit.style.Wave;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -20,55 +25,91 @@ import java.util.ArrayList;
 import humarahimachal.online.Adapter.DistrictsAdapter;
 import humarahimachal.online.Modal.DistrictModal;
 import humarahimachal.online.R;
+import humarahimachal.online.Utils.CreateSnackBar;
 import humarahimachal.online.databinding.ActivityDistrictBinding;
 
-public class DistrictActivity extends AppCompatActivity {
+public class DistrictActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "DistrictActivity";
     ActivityDistrictBinding districtBinding;
     FirebaseFirestore firebaseFirestore;
     ArrayList<DistrictModal> districtList;
-    ProgressDialog progressDialog;
+    Sprite doubleBounce;
+    private InterstitialAd mInterstitialAd;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_district);
-        progressDialog=new ProgressDialog(this);
-        progressDialog.setMessage(getResources().getString(R.string.loadingData));
-        progressDialog.setCancelable(false);
-        progressDialog.show();
         getSupportActionBar().setTitle(getResources().getString(R.string.districtDaTa));
         firebaseFirestore = FirebaseFirestore.getInstance();
         districtBinding = DataBindingUtil.setContentView(this, R.layout.activity_district);
+        findViewById(R.id.btnTryAgain).setOnClickListener(this);
         districtList = new ArrayList<>();
         districtBinding.viewpagerindicator.setAnimationType(AnimationType.FILL);
         CardFlipPageTransformer cardFlipPageTransformer = new CardFlipPageTransformer();
         cardFlipPageTransformer.setScalable(false);
         cardFlipPageTransformer.setFlipOrientation(CardFlipPageTransformer.VERTICAL);
         districtBinding.viewPager.setPageTransformer(true, cardFlipPageTransformer);
+        doubleBounce = new Wave();
+        setUpAdd();
+        districtBinding.progrssBar.setIndeterminateDrawable(doubleBounce);
+        districtBinding.progrssBar.setVisibility(View.VISIBLE);
         firebaseFirestore.collection(getResources().getString(R.string.districtDaTa)).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                progressDialog.dismiss();
-                for (DocumentSnapshot d : queryDocumentSnapshots.getDocuments()) {
-                    DistrictModal districtData = d.toObject(DistrictModal.class);
-                    districtList.add(districtData);
+                if (queryDocumentSnapshots.isEmpty()) {
+                    districtBinding.progrssBar.setVisibility(View.GONE);
+                    findViewById(R.id.notConnectedView).setVisibility(View.VISIBLE);
+
+
+                } else {
+                    for (DocumentSnapshot d : queryDocumentSnapshots.getDocuments()) {
+                        districtBinding.progrssBar.setVisibility(View.GONE);
+                        districtBinding.districtview.setVisibility(View.VISIBLE);
+                        DistrictModal districtData = d.toObject(DistrictModal.class);
+                        districtList.add(districtData);
+                    }
+
+                    setAdapter();
                 }
 
-                setAdapter();
             }
 
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
+                CreateSnackBar.createSnackBar(getApplicationContext(), districtBinding.parentDistrictView, e.getMessage());
+                districtBinding.progrssBar.setVisibility(View.GONE);
 
             }
         });
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                super.onAdLoaded();
+                mInterstitialAd.show();
+            }
+        });
+    }
+
+    private void setUpAdd() {
+
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
     }
 
     private void setAdapter() {
         DistrictsAdapter districtsAdapter = new DistrictsAdapter(getSupportFragmentManager(), districtList, getApplicationContext());
         districtBinding.viewPager.setAdapter(districtsAdapter);
+    }
+
+    @Override
+    public void onClick(View view) {
+        if (view.getId() == R.id.btnTryAgain) {
+            finish();
+            startActivity(getIntent());
+        }
     }
 }

@@ -9,6 +9,9 @@ import androidx.databinding.DataBindingUtil;
 
 import com.github.ybq.android.spinkit.sprite.Sprite;
 import com.github.ybq.android.spinkit.style.Wave;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -31,6 +34,7 @@ public class NewsPaperActivity extends AppCompatActivity implements View.OnClick
     RemotePDFViewPager remotePDFViewPager;
     PDFPagerAdapter pdfPagerAdapter;
     Sprite doubleBounce;
+    private InterstitialAd mInterstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +42,9 @@ public class NewsPaperActivity extends AppCompatActivity implements View.OnClick
         setContentView(R.layout.activity_news_paper);
         getSupportActionBar().setTitle(getResources().getString(R.string.weeklynewspaper));
         doubleBounce = new Wave();
-
         firebaseFirestore = FirebaseFirestore.getInstance();
         newspaperBinding = DataBindingUtil.setContentView(this, R.layout.activity_news_paper);
+        setUpAdd();
         newspaperBinding.progrssBar.setIndeterminateDrawable(doubleBounce);
         if (NewsNetworikUtil.isConnectedToInternet(this)) {
             newspaperBinding.progrssBar.setVisibility(View.VISIBLE);
@@ -50,6 +54,14 @@ public class NewsPaperActivity extends AppCompatActivity implements View.OnClick
         }
         newspaperBinding.btnTryAgain.setOnClickListener(this);
 
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                super.onAdLoaded();
+                mInterstitialAd.show();
+            }
+        });
+
     }
 
     private void getDataFromFirebase() {
@@ -57,28 +69,36 @@ public class NewsPaperActivity extends AppCompatActivity implements View.OnClick
         firebaseFirestore.collection(getResources().getString(R.string.news_paper)).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                for (DocumentSnapshot d : queryDocumentSnapshots.getDocuments()) {
-                    NewsPaperModal newsPaperModal = d.toObject(NewsPaperModal.class);
-                    remotePDFViewPager = new RemotePDFViewPager(getApplicationContext(), newsPaperModal.getUrl(), new DownloadFile.Listener() {
-                        @Override
-                        public void onSuccess(String url, String destinationPath) {
-                            newspaperBinding.progrssBar.setVisibility(View.GONE);
-                            pdfPagerAdapter = new PDFPagerAdapter(getApplicationContext(), destinationPath);
-                            remotePDFViewPager.setAdapter(pdfPagerAdapter);
-                            setContentView(remotePDFViewPager);
-                        }
 
-                        @Override
-                        public void onFailure(Exception e) {
-                            newspaperBinding.notConnectedView.setVisibility(View.VISIBLE);
-                            newspaperBinding.progrssBar.setVisibility(View.GONE);
-                        }
+                if (queryDocumentSnapshots.isEmpty()) {
+                    newspaperBinding.notConnectedView.setVisibility(View.VISIBLE);
+                    newspaperBinding.progrssBar.setVisibility(View.GONE);
+                } else {
+                    for (DocumentSnapshot d : queryDocumentSnapshots.getDocuments()) {
 
-                        @Override
-                        public void onProgressUpdate(int progress, int total) {
+                        NewsPaperModal newsPaperModal = d.toObject(NewsPaperModal.class);
+                        remotePDFViewPager = new RemotePDFViewPager(getApplicationContext(), newsPaperModal.getUrl(), new DownloadFile.Listener() {
+                            @Override
+                            public void onSuccess(String url, String destinationPath) {
+                                newspaperBinding.progrssBar.setVisibility(View.GONE);
+                                pdfPagerAdapter = new PDFPagerAdapter(getApplicationContext(), destinationPath);
+                                remotePDFViewPager.setAdapter(pdfPagerAdapter);
+                                setContentView(remotePDFViewPager);
+                            }
 
-                        }
-                    });
+                            @Override
+                            public void onFailure(Exception e) {
+                                newspaperBinding.notConnectedView.setVisibility(View.VISIBLE);
+                                newspaperBinding.progrssBar.setVisibility(View.GONE);
+                            }
+
+                            @Override
+                            public void onProgressUpdate(int progress, int total) {
+
+                            }
+                        });
+
+                    }
 
                 }
             }
@@ -106,5 +126,11 @@ public class NewsPaperActivity extends AppCompatActivity implements View.OnClick
             finish();
             startActivity(getIntent());
         }
+    }
+
+    private void setUpAdd() {
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId(getString(R.string.interstialid));
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
     }
 }

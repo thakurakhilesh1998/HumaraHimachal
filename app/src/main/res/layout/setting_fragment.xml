@@ -64,25 +64,30 @@
                 android:id="@+id/changepassword"
                 android:text="@string/change_password"
                 android:drawableLeft="@drawable/changepass"
+                android:elevation="@dimen/ele"
                 />
 
             <TextView
                 android:id="@+id/share"
                 style="@style/settingTextView"
                 android:drawableLeft="@drawable/share"
-                android:text="@string/share_with_friends" />
+                android:text="@string/share_with_friends"
+                android:elevation="@dimen/ele"
+                />
 
             <TextView
                 android:id="@+id/logout"
                 style="@style/settingTextView"
                 android:text="@string/logout"
                 android:drawableLeft="@drawable/logout"
+                android:elevation="@dimen/ele"
                 />
             <TextView
                 android:id="@+id/contactUs"
                 style="@style/settingTextView"
                 android:text="@string/contact_us_email"
                 android:drawableLeft="@drawable/contactus"
+                android:elevation="@dimen/ele"
                 />
         </LinearLayout>
     </LinearLayout>

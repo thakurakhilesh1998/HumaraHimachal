@@ -4,12 +4,19 @@
     xmlns:attrs="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/parentDistrictView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context=".UI.FairAndFestival">
-
+        <LinearLayout
+            android:id="@+id/districtview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            >
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewPager"
             android:layout_width="match_parent"
@@ -21,6 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:layout_alignParentBottom="true"
             android:padding="@dimen/mainPadding"
             app:piv_dynamicCount="true"
             app:piv_interactiveAnimation="true"
@@ -29,5 +37,23 @@
             app:piv_viewPager="@id/viewPager"
             attrs:piv_padding="@dimen/mainPadding"
             attrs:piv_radius="6dp" />
-    </LinearLayout>
+        </LinearLayout>
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/progrssBar"
+            style="@style/SpinKitView.Large.Circle"
+            app:SpinKit_Color="@color/colorAccent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            />
+
+        <include
+            layout="@layout/netowork_error"
+            ></include>
+
+    </RelativeLayout>
 </layout>

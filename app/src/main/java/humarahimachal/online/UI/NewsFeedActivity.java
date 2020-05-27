@@ -12,6 +12,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.github.ybq.android.spinkit.sprite.Sprite;
 import com.github.ybq.android.spinkit.style.Wave;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -43,6 +46,7 @@ public class NewsFeedActivity extends AppCompatActivity implements View.OnClickL
     NewsAdapter newsAdapter;
     NewsFeedLoader newsDataLoader;
     Sprite doubleBounce;
+    private InterstitialAd mInterstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +58,7 @@ public class NewsFeedActivity extends AppCompatActivity implements View.OnClickL
         newsFeedBinding.progrssBar.setIndeterminateDrawable(doubleBounce);
         newsDataLoader = new NewsFeedLoader();
         newsList = new ArrayList<>();
+        setUpAdd();
         newsFeedBinding.btnTryAgain.setOnClickListener(this);
         if (NewsNetworikUtil.isConnectedToInternet(this)) {
             LinearLayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
@@ -66,7 +71,13 @@ public class NewsFeedActivity extends AppCompatActivity implements View.OnClickL
             newsFeedBinding.relativeLayout.setBackgroundColor(getResources().getColor(R.color.colorWhite));
             newsFeedBinding.notConnectedView.setVisibility(View.VISIBLE);
         }
-
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                super.onAdLoaded();
+                mInterstitialAd.show();
+            }
+        });
     }
 
     private void addCardLikeFunctionality() {
@@ -78,11 +89,17 @@ public class NewsFeedActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onClick(View view) {
-        if(view.getId()==R.id.btnTryAgain)
-        {
+        if (view.getId() == R.id.btnTryAgain) {
             finish();
             startActivity(getIntent());
         }
+    }
+
+    private void setUpAdd() {
+
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId(getResources().getString(R.string.interstialid));
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
     }
 
     public class NewsFeedLoader extends AsyncTask<Void, Void, ArrayList<NewsDataModal>> {

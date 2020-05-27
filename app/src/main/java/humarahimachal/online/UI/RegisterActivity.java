@@ -4,7 +4,6 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -176,7 +175,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 GoogleSignInAccount account = task.getResult(ApiException.class);
                 firebaseAuthWithGoogle(account);
             } catch (Exception e) {
-                Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+                CreateSnackBar.createSnackBar(getApplicationContext(), registerBinding.registerParent, getString(R.string.network_error));
             }
         }
     }
