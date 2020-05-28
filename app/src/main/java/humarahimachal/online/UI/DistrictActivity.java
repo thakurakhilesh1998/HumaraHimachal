@@ -1,6 +1,7 @@
 package humarahimachal.online.UI;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -90,13 +91,19 @@ public class DistrictActivity extends AppCompatActivity implements View.OnClickL
                 super.onAdLoaded();
                 mInterstitialAd.show();
             }
+
+            @Override
+            public void onAdFailedToLoad(int i) {
+                super.onAdFailedToLoad(i);
+                Log.i(TAG, String.valueOf(i));
+            }
         });
     }
 
     private void setUpAdd() {
 
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.setAdUnitId(getResources().getString(R.string.interstialid));
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
     }
 

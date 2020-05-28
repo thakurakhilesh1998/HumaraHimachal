@@ -1,63 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    <ScrollView
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:attrs="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/parentDistrictView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-            <LinearLayout
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".UI.FairAndFestival">
+        <LinearLayout
+            android:id="@+id/districtview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            >
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPager"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:padding="@dimen/subMargin"
-                tools:context=".UI.Himachal_History_Activity">
-                    <ImageView
-                        android:id="@+id/ivHistoryImage"
-                        android:layout_width="match_parent"
-                        android:layout_height="250dp"
-                        android:src="@drawable/stoneage"
-                        android:scaleType="centerCrop"
-                        />
-                    <TextView
-                        android:id="@+id/tvHistoryTitle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="@dimen/mainText"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
-                        android:text="Stone Age to the Middle Age"
-                        android:layout_marginVertical="@dimen/mainPadding"
-                        />
+                android:layout_weight="1" />
 
-                <TextView
-                    android:id="@+id/tvMainText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/titillium_web"
-                    android:text="@string/sampleData"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/infotext" />
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginVertical="@dimen/subMargin"
-                    >
-                    <ImageButton
-                        android:id="@+id/nextButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/ic_previous"
-                        android:layout_alignParentLeft="true"
-                    />
-                    <ImageButton
-                        android:id="@+id/prevButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/ic_next"
-                        android:layout_alignParentRight="true"
-                        />
-                </RelativeLayout>
-            </LinearLayout>
-    </ScrollView>
+            <com.rd.PageIndicatorView
+                android:id="@+id/viewpagerindicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_alignParentBottom="true"
+                android:padding="@dimen/mainPadding"
+                app:piv_dynamicCount="true"
+                app:piv_interactiveAnimation="true"
+                app:piv_selectedColor="@color/lightAccentColor"
+                app:piv_unselectedColor="@color/colorPrimary"
+                app:piv_viewPager="@id/viewPager"
+                attrs:piv_padding="@dimen/mainPadding"
+                attrs:piv_radius="6dp" />
+        </LinearLayout>
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/progrssBar"
+            style="@style/SpinKitView.Large.Circle"
+            app:SpinKit_Color="@color/colorAccent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            />
+
+        <include
+            layout="@layout/netowork_error"
+            ></include>
+    </RelativeLayout>
 </layout>
